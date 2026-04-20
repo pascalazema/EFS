@@ -13,8 +13,8 @@
       --text: #1f2937;
       --muted: #6b7280;
       --line: #e5e7eb;
-      --primary: #0b57d0;
-      --primary-dark: #0842a0;
+      --primary: #002f6c;
+      --primary-dark: #001f49;
       --accent: #c62828;
       --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
       --radius: 14px;
@@ -111,22 +111,22 @@
     }
 
     .btn-primary {
-      background: var(--primary);
-      color: #fff;
+      background: #002f6c;
+      color: #ffffff;
     }
 
     .btn-primary:hover {
-      background: var(--primary-dark);
+      background: #001f49;
     }
 
     .btn-secondary {
-      background: #fff;
-      color: var(--primary);
+      background: #ffffff;
+      color: #002f6c;
       border-color: var(--line);
     }
 
     .btn-secondary:hover {
-      border-color: var(--primary);
+      border-color: #002f6c;
     }
 
     .hint {
@@ -203,7 +203,7 @@
       width: 100%;
       overflow: hidden;
       border-radius: 10px;
-      background: #fff;
+      background: #ffffff;
     }
 
     iframe {
@@ -212,7 +212,7 @@
       min-height: 1100px;
       border: 0;
       display: block;
-      background: #fff;
+      background: #ffffff;
     }
 
     footer {
@@ -278,12 +278,18 @@
   <div class="top-actions">
     <div class="top-actions-inner">
       <div class="top-actions-left">
-        <a class="btn btn-primary" href="#rapport">Voir le rapport</a>
-        <a class="btn btn-secondary" href="sources.html">Sources et méthodologie</a>
-        <a class="btn btn-secondary" href="https://datastudio.google.com/embed/reporting/1a04a388-cd35-4495-8003-0ea8d7411247/page/p_56qzvkrt2d" target="_blank">Ouvrir le rapport seul</a>
+        <a class="btn btn-primary" href="https://datastudio.google.com/embed/reporting/1a04a388-cd35-4495-8003-0ea8d7411247/page/p_56qzvkrt2d" target="_blank">
+          Voir le rapport
+        </a>
+        <a class="btn btn-secondary" href="sources.html">
+          Sources et méthodologie
+        </a>
+        <a class="btn btn-secondary" href="#rapport">
+          Rapport intégré
+        </a>
       </div>
       <div class="top-actions-right">
-        <span class="hint">Astuce : le mode “rapport seul” facilite la navigation entre pages.</span>
+        <span class="hint">Astuce : le bouton “Voir le rapport” ouvre le rapport dans une vue dédiée.</span>
       </div>
     </div>
   </div>
@@ -328,9 +334,6 @@
 
   <footer>
     Page publiée via GitHub Pages. Le rapport intégré est fourni via Google Looker Studio en mode public.
-  </footer>
-</body>
-</html>
   </footer>
 </body>
 </html>
