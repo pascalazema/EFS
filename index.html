@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maison du don Galilée - Rapport EFS</title>
-  <meta name="description" content="Rapport interactif et dossier de candidature - Maison du don Galilée / EFS">
+  <title>Rapport interactif et dossier de candidature - Azema Pascal</title>
+  <meta name="description" content="Rapport interactif - Maison du don Galilée - Labège / Azema Pascal">
 
   <style>
     :root {
@@ -18,11 +18,15 @@
       --accent: #c62828;
       --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
       --radius: 14px;
-      --max: 1280px;
+      --max: 1600px;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -35,7 +39,7 @@
     header {
       background: linear-gradient(135deg, #ffffff 0%, #f3f6fb 100%);
       border-bottom: 1px solid var(--line);
-      padding: 40px 24px 28px 24px;
+      padding: 36px 24px 24px 24px;
     }
 
     .wrap {
@@ -61,23 +65,38 @@
 
     .subtitle {
       margin: 0;
-      max-width: 920px;
+      max-width: 1000px;
       color: var(--muted);
       line-height: 1.6;
       font-size: 16px;
     }
 
-    main {
-      max-width: var(--max);
-      margin: 28px auto 40px auto;
-      padding: 0 24px;
+    .top-actions {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(245, 247, 251, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
     }
 
-    .hero-actions {
+    .top-actions-inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 12px 24px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 22px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .top-actions-left,
+    .top-actions-right {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
     }
 
     .btn {
@@ -88,6 +107,7 @@
       font-weight: 700;
       transition: 0.2s ease;
       border: 1px solid transparent;
+      white-space: nowrap;
     }
 
     .btn-primary {
@@ -109,9 +129,20 @@
       border-color: var(--primary);
     }
 
+    .hint {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    main {
+      max-width: 1600px;
+      margin: 26px auto 40px auto;
+      padding: 0 24px;
+    }
+
     .grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 20px;
       margin-bottom: 22px;
     }
@@ -168,16 +199,24 @@
       font-size: 14px;
     }
 
-    iframe {
+    .iframe-wrap {
       width: 100%;
-      height: 980px;
-      border: 0;
+      overflow: hidden;
       border-radius: 10px;
       background: #fff;
     }
 
+    iframe {
+      width: 100%;
+      height: calc(100vh - 120px);
+      min-height: 1100px;
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+
     footer {
-      max-width: var(--max);
+      max-width: 1600px;
       margin: 0 auto 30px auto;
       padding: 0 24px;
       color: var(--muted);
@@ -185,7 +224,7 @@
       line-height: 1.6;
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1100px) {
       .grid {
         grid-template-columns: 1fr;
       }
@@ -195,46 +234,59 @@
       }
 
       iframe {
-        height: 780px;
+        height: 85vh;
+        min-height: 900px;
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 700px) {
       header {
-        padding-top: 30px;
+        padding-top: 28px;
       }
 
-      main {
-        padding: 0 16px;
-      }
-
+      .top-actions-inner,
+      main,
       footer {
-        padding: 0 16px;
+        padding-left: 16px;
+        padding-right: 16px;
       }
 
       iframe {
-        height: 640px;
+        height: 80vh;
+        min-height: 700px;
+      }
+
+      .hint {
+        display: none;
       }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="wrap">
-      <div class="kicker">Établissement Français du Sang</div>
-      <h1>Maison du don Galilée — Rapport interactif et dossier de candidature</h1>
+      <div class="kicker">MAISON DU DON GALILÉE - LABÈGE</div>
+      <h1>Rapport interactif et dossier de candidature - Azema Pascal</h1>
       <p class="subtitle">
-        Cette page centralise le rapport interactif réalisé sous Google Looker Studio, les éléments de méthode,
-        les sources mobilisées et le dossier de candidature associé au projet.
+        Cette page centralise le rapport interactif Looker Studio, les éléments de méthode
+        et les sources mobilisées dans le cadre du dossier de candidature.
       </p>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#rapport">Voir le rapport</a>
-        <a class="btn btn-secondary" href="sources.html">Sources et méthodologie</a>
-        <a class="btn btn-secondary" href="Dossier_candidature.pdf" target="_blank">Dossier de candidature</a>
-      </div>
     </div>
   </header>
+
+  <div class="top-actions">
+    <div class="top-actions-inner">
+      <div class="top-actions-left">
+        <a class="btn btn-primary" href="#rapport">Voir le rapport</a>
+        <a class="btn btn-secondary" href="sources.html">Sources et méthodologie</a>
+        <a class="btn btn-secondary" href="https://datastudio.google.com/embed/reporting/1a04a388-cd35-4495-8003-0ea8d7411247/page/p_56qzvkrt2d" target="_blank">Ouvrir le rapport seul</a>
+      </div>
+      <div class="top-actions-right">
+        <span class="hint">Astuce : le mode “rapport seul” facilite la navigation entre pages.</span>
+      </div>
+    </div>
+  </div>
 
   <main>
     <section class="grid">
@@ -252,8 +304,7 @@
         <ul class="list">
           <li>rapport interactif Looker Studio ;</li>
           <li>sources de données et méthodologie ;</li>
-          <li>dossier de candidature ;</li>
-          <li>visualisations et tableaux de simulation.</li>
+          <li>tableaux et simulations.</li>
         </ul>
       </div>
     </section>
@@ -264,18 +315,22 @@
         <span>Consultation publique</span>
       </div>
 
-      <iframe
-        src="https://datastudio.google.com/embed/reporting/1a04a388-cd35-4495-8003-0ea8d7411247/page/p_ujwf96iq2d"
-        frameborder="0"
-        style="border:0"
-        allowfullscreen
-        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-      </iframe>
+      <div class="iframe-wrap">
+        <iframe
+          src="https://datastudio.google.com/embed/reporting/1a04a388-cd35-4495-8003-0ea8d7411247/page/p_56qzvkrt2d"
+          frameborder="0"
+          allowfullscreen
+          sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
+      </div>
     </section>
   </main>
 
   <footer>
     Page publiée via GitHub Pages. Le rapport intégré est fourni via Google Looker Studio en mode public.
+  </footer>
+</body>
+</html>
   </footer>
 </body>
 </html>
